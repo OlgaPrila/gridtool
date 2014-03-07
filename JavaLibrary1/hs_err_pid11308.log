@@ -1,0 +1,828 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00cd688c, pid=11308, tid=3035294576
+#
+# JRE version: 6.0_20-b20
+# Java VM: OpenJDK Client VM (19.0-b09 mixed mode, sharing linux-x86 )
+# Derivative: IcedTea6 1.9.10
+# Distribution: Ubuntu 10.04.1 LTS, package 6b20-1.9.10-0ubuntu1~10.04.2
+# Problematic frame:
+# C  [libaccARC0.so+0x1988c]  _ZN3Arc13SubmitterARC06SubmitERKNS_14JobDescriptionERKNS_15ExecutionTargetERNS_3JobE+0x32c
+#
+# If you would like to submit a bug report, please include
+# instructions how to reproduce the bug and visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-6/
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0884ec00):  JavaThread "AWT-EventQueue-0" [_thread_in_native, id=11327, stack(0xb4e5e000,0xb4eaf000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=128 (), si_addr=0x00000000
+
+Registers:
+EAX=0xb4b58958, EBX=0x00cefff4, ECX=0x00000000, EDX=0xb4eaa298
+ESP=0xb4eaa230, EBP=0xb4eac7f8, ESI=0xb4b34be8, EDI=0xb4eaa5f4
+EIP=0x00cd688c, CR2=0xb7870100, EFLAGS=0x00010282
+
+Register to memory mapping:
+
+EAX=0xb4b58958
+0xb4b58958 is pointing to unknown location
+
+EBX=0x00cefff4
+0x00cefff4: <offset 0x32ff4> in /usr/lib/arc/libaccARC0.so at 0x00cbd000
+
+ECX=0x00000000
+0x00000000 is pointing to unknown location
+
+EDX=0xb4eaa298
+0xb4eaa298 is pointing into the stack for thread: 0x0884ec00
+"AWT-EventQueue-0" prio=10 tid=0x0884ec00 nid=0x2c3f runnable [0xb4eac000]
+   java.lang.Thread.State: RUNNABLE
+
+ESP=0xb4eaa230
+0xb4eaa230 is pointing into the stack for thread: 0x0884ec00
+"AWT-EventQueue-0" prio=10 tid=0x0884ec00 nid=0x2c3f runnable [0xb4eac000]
+   java.lang.Thread.State: RUNNABLE
+
+EBP=0xb4eac7f8
+0xb4eac7f8 is pointing into the stack for thread: 0x0884ec00
+"AWT-EventQueue-0" prio=10 tid=0x0884ec00 nid=0x2c3f runnable [0xb4eac000]
+   java.lang.Thread.State: RUNNABLE
+
+ESI=0xb4b34be8
+0xb4b34be8 is pointing to unknown location
+
+EDI=0xb4eaa5f4
+0xb4eaa5f4 is pointing into the stack for thread: 0x0884ec00
+"AWT-EventQueue-0" prio=10 tid=0x0884ec00 nid=0x2c3f runnable [0xb4eac000]
+   java.lang.Thread.State: RUNNABLE
+
+
+Top of Stack: (sp=0xb4eaa230)
+0xb4eaa230:   b4b34be8 b4eaa298 b4b40100 00000019
+0xb4eaa240:   b4b27b58 00000014 00000000 76b9f5d7
+0xb4eaa250:   d9a5b75d b6c27ba3 7badb196 5d5db6b5
+0xb4eaa260:   d8aa0dbb 65d66965 d24cc9a4 1be2a1d5
+0xb4eaa270:   074ec73c b4eac848 00000001 b4eaa298
+0xb4eaa280:   b4b40100 b4eaa5d8 b4eaa5cc b4b4012c
+0xb4eaa290:   b937b9df 5dbdc9c9 074ec73c 074ec73c
+0xb4eaa2a0:   074ec73c b4eaa2a4 b4eaa2a4 b4eaa2ac 
+
+Instructions: (pc=0x00cd688c)
+0x00cd687c:   34 24 89 54 24 08 8b 95 84 da ff ff 89 54 24 04
+0x00cd688c:   ff 50 10 84 c0 0f 85 e9 00 00 00 8d 85 f7 dd ff 
+
+Stack: [0xb4e5e000,0xb4eaf000],  sp=0xb4eaa230,  free space=304k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libaccARC0.so+0x1988c]  _ZN3Arc13SubmitterARC06SubmitERKNS_14JobDescriptionERKNS_15ExecutionTargetERNS_3JobE+0x32c
+C  [libarcclient.so.1+0x37a41]  _ZN3Arc9Submitter6SubmitERKNS_14JobDescriptionERKNS_15ExecutionTargetE+0x131
+C  [libjarc.so+0x85ace]  Java_nordugrid_arc_arcJNI_Submitter_1Submit_1_1SWIG_10+0xae
+j  nordugrid.arc.arcJNI.Submitter_Submit__SWIG_0(JLnordugrid/arc/Submitter;JLnordugrid/arc/JobDescription;JLnordugrid/arc/ExecutionTarget;)J+0
+j  nordugrid.arc.Submitter.Submit(Lnordugrid/arc/JobDescription;Lnordugrid/arc/ExecutionTarget;)Lnordugrid/arc/URL;+19
+j  NewJFrame.jButton1ActionPerformed(Ljava/awt/event/ActionEvent;)V+389
+j  NewJFrame.access$100(LNewJFrame;Ljava/awt/event/ActionEvent;)V+2
+j  NewJFrame$2.actionPerformed(Ljava/awt/event/ActionEvent;)V+5
+j  javax.swing.AbstractButton.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+84
+j  javax.swing.AbstractButton$Handler.actionPerformed(Ljava/awt/event/ActionEvent;)V+5
+j  javax.swing.DefaultButtonModel.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+35
+j  javax.swing.DefaultButtonModel.setPressed(Z)V+117
+j  javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Ljava/awt/event/MouseEvent;)V+35
+j  java.awt.Component.processMouseEvent(Ljava/awt/event/MouseEvent;)V+64
+j  javax.swing.JComponent.processMouseEvent(Ljava/awt/event/MouseEvent;)V+23
+j  java.awt.Component.processEvent(Ljava/awt/AWTEvent;)V+81
+j  java.awt.Container.processEvent(Ljava/awt/AWTEvent;)V+18
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+589
+J  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V
+j  java.awt.LightweightDispatcher.dispatchEvent(Ljava/awt/AWTEvent;)Z+50
+J  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V+41
+j  java.awt.EventQueue.access$000(Ljava/awt/EventQueue;Ljava/awt/AWTEvent;Ljava/lang/Object;)V+3
+j  java.awt.EventQueue$1.run()Ljava/lang/Void;+12
+j  java.awt.EventQueue$1.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x209ab2]
+V  [libjvm.so+0x30a629]
+V  [libjvm.so+0x2089ef]
+V  [libjvm.so+0x257b2d]
+C  [libjava.so+0xb35a]  Java_java_security_AccessController_doPrivileged__Ljava_security_PrivilegedAction_2Ljava_security_AccessControlContext_2+0x3a
+J  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;
+J  java.security.AccessControlContext$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;
+j  java.awt.EventQueue$2.run()Ljava/lang/Void;+11
+j  java.awt.EventQueue$2.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x209ab2]
+V  [libjvm.so+0x30a629]
+V  [libjvm.so+0x2089ef]
+V  [libjvm.so+0x257b2d]
+C  [libjava.so+0xb35a]  Java_java_security_AccessController_doPrivileged__Ljava_security_PrivilegedAction_2Ljava_security_AccessControlContext_2+0x3a
+J  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;
+J  java.security.AccessControlContext$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;
+J  java.awt.EventDispatchThread.pumpOneEventForFilters(I)Z
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x209ab2]
+V  [libjvm.so+0x30a629]
+V  [libjvm.so+0x2089ef]
+V  [libjvm.so+0x20953a]
+V  [libjvm.so+0x209698]
+V  [libjvm.so+0x253e61]
+V  [libjvm.so+0x3bb45c]
+V  [libjvm.so+0x3bb522]
+V  [libjvm.so+0x311071]
+C  [libpthread.so.0+0x596e]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  nordugrid.arc.arcJNI.Submitter_Submit__SWIG_0(JLnordugrid/arc/Submitter;JLnordugrid/arc/JobDescription;JLnordugrid/arc/ExecutionTarget;)J+0
+j  nordugrid.arc.Submitter.Submit(Lnordugrid/arc/JobDescription;Lnordugrid/arc/ExecutionTarget;)Lnordugrid/arc/URL;+19
+j  NewJFrame.jButton1ActionPerformed(Ljava/awt/event/ActionEvent;)V+389
+j  NewJFrame.access$100(LNewJFrame;Ljava/awt/event/ActionEvent;)V+2
+j  NewJFrame$2.actionPerformed(Ljava/awt/event/ActionEvent;)V+5
+j  javax.swing.AbstractButton.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+84
+j  javax.swing.AbstractButton$Handler.actionPerformed(Ljava/awt/event/ActionEvent;)V+5
+j  javax.swing.DefaultButtonModel.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+35
+j  javax.swing.DefaultButtonModel.setPressed(Z)V+117
+j  javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Ljava/awt/event/MouseEvent;)V+35
+j  java.awt.Component.processMouseEvent(Ljava/awt/event/MouseEvent;)V+64
+j  javax.swing.JComponent.processMouseEvent(Ljava/awt/event/MouseEvent;)V+23
+j  java.awt.Component.processEvent(Ljava/awt/AWTEvent;)V+81
+j  java.awt.Container.processEvent(Ljava/awt/AWTEvent;)V+18
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+589
+J  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V
+J  java.awt.LightweightDispatcher.retargetMouseEvent(Ljava/awt/Component;ILjava/awt/event/MouseEvent;)V
+j  java.awt.LightweightDispatcher.processMouseEvent(Ljava/awt/event/MouseEvent;)Z+139
+j  java.awt.LightweightDispatcher.dispatchEvent(Ljava/awt/AWTEvent;)Z+50
+J  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V
+j  java.awt.Window.dispatchEventImpl(Ljava/awt/AWTEvent;)V+19
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V+41
+j  java.awt.EventQueue.access$000(Ljava/awt/EventQueue;Ljava/awt/AWTEvent;Ljava/lang/Object;)V+3
+j  java.awt.EventQueue$1.run()Ljava/lang/Void;+12
+j  java.awt.EventQueue$1.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+J  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;
+J  java.security.AccessControlContext$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;
+j  java.security.AccessControlContext$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+6
+j  java.awt.EventQueue$2.run()Ljava/lang/Void;+11
+j  java.awt.EventQueue$2.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+J  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;
+J  java.security.AccessControlContext$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+73
+J  java.awt.EventDispatchThread.pumpOneEventForFilters(I)Z
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+30
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x088cb000 JavaThread "TimerQueue" daemon [_thread_blocked, id=11333, stack(0xb4cc9000,0xb4d1a000)]
+  0x08714400 JavaThread "DestroyJavaVM" [_thread_blocked, id=11310, stack(0xb7783000,0xb77d4000)]
+=>0x0884ec00 JavaThread "AWT-EventQueue-0" [_thread_in_native, id=11327, stack(0xb4e5e000,0xb4eaf000)]
+  0x0884d000 JavaThread "AWT-Shutdown" [_thread_blocked, id=11326, stack(0xb4eaf000,0xb4f00000)]
+  0x0884c400 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=11321, stack(0xb4f00000,0xb4f51000)]
+  0x08809000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=11320, stack(0xb4fcf000,0xb5020000)]
+  0x08750800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=11318, stack(0xb50b7000,0xb5108000)]
+  0x0874ec00 JavaThread "CompilerThread0" daemon [_thread_blocked, id=11317, stack(0xb5108000,0xb5189000)]
+  0x0874d000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=11316, stack(0xb5189000,0xb51da000)]
+  0x08748400 JavaThread "Finalizer" daemon [_thread_blocked, id=11315, stack(0xb5220000,0xb5271000)]
+  0x08743c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=11314, stack(0xb5271000,0xb52c2000)]
+
+Other Threads:
+  0x08741c00 VMThread [stack: 0xb52c2000,0xb5343000] [id=11313]
+  0x0875c800 WatcherThread [stack: 0xb5036000,0xb50b7000] [id=11319]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4800K, used 345K [0x70630000, 0x70b60000, 0x7ac30000)
+  eden space 4288K,   3% used [0x70630000, 0x706529a0, 0x70a60000)
+  from space 512K,  40% used [0x70a60000, 0x70a93c40, 0x70ae0000)
+  to   space 512K,   0% used [0x70ae0000, 0x70ae0000, 0x70b60000)
+ tenured generation   total 10624K, used 925K [0x7ac30000, 0x7b690000, 0x8f830000)
+   the space 10624K,   8% used [0x7ac30000, 0x7ad17630, 0x7ad17800, 0x7b690000)
+ compacting perm gen  total 12288K, used 2175K [0x8f830000, 0x90430000, 0x93830000)
+   the space 12288K,  17% used [0x8f830000, 0x8fa4fcd8, 0x8fa4fe00, 0x90430000)
+    ro space 10240K,  73% used [0x93830000, 0x93f88c20, 0x93f88e00, 0x94230000)
+    rw space 12288K,  60% used [0x94230000, 0x94970fe8, 0x94971000, 0x94e30000)
+
+Dynamic libraries:
+00110000-00195000 r-xp 00000000 08:07 394776     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libawt.so
+00195000-00196000 r--p 00085000 08:07 394776     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libawt.so
+00196000-0019c000 rw-p 00086000 08:07 394776     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libawt.so
+0019c000-001c1000 rw-p 00000000 00:00 0 
+001c1000-00206000 r-xp 00000000 08:07 395007     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/xawt/libmawt.so
+00206000-00207000 r--p 00044000 08:07 395007     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/xawt/libmawt.so
+00207000-00209000 rw-p 00045000 08:07 395007     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/xawt/libmawt.so
+00209000-0020a000 rw-p 00000000 00:00 0 
+0020a000-0020e000 r-xp 00000000 08:07 396148     /usr/lib/libXtst.so.6.1.0
+0020e000-0020f000 r--p 00003000 08:07 396148     /usr/lib/libXtst.so.6.1.0
+0020f000-00210000 rw-p 00004000 08:07 396148     /usr/lib/libXtst.so.6.1.0
+00210000-00214000 r-xp 00000000 08:07 396118     /usr/lib/libXdmcp.so.6.0.0
+00214000-00215000 r--p 00003000 08:07 396118     /usr/lib/libXdmcp.so.6.0.0
+00215000-00216000 rw-p 00004000 08:07 396118     /usr/lib/libXdmcp.so.6.0.0
+00216000-00287000 r-xp 00000000 08:07 393732     /usr/lib/libfreetype.so.6.3.22
+00287000-0028b000 r--p 00070000 08:07 393732     /usr/lib/libfreetype.so.6.3.22
+0028b000-0028c000 rw-p 00074000 08:07 393732     /usr/lib/libfreetype.so.6.3.22
+0028c000-00294000 r-xp 00000000 08:07 396114     /usr/lib/libXcursor.so.1.0.2
+00294000-00295000 r--p 00007000 08:07 396114     /usr/lib/libXcursor.so.1.0.2
+00295000-00296000 rw-p 00008000 08:07 396114     /usr/lib/libXcursor.so.1.0.2
+00296000-0029c000 r-xp 00000000 08:07 395817     /usr/lib/libarccrypto.so.1.0.0
+0029c000-0029d000 r--p 00005000 08:07 395817     /usr/lib/libarccrypto.so.1.0.0
+0029d000-0029e000 rw-p 00006000 08:07 395817     /usr/lib/libarccrypto.so.1.0.0
+0029f000-002ab000 r-xp 00000000 08:07 394796     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libverify.so
+002ab000-002ac000 r--p 0000b000 08:07 394796     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libverify.so
+002ac000-002ad000 rw-p 0000c000 08:07 394796     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libverify.so
+002ad000-002ca000 r-xp 00000000 08:07 133709     /lib/libgcc_s.so.1
+002ca000-002cb000 r--p 0001c000 08:07 133709     /lib/libgcc_s.so.1
+002cb000-002cc000 rw-p 0001d000 08:07 133709     /lib/libgcc_s.so.1
+002cc000-002e0000 r-xp 00000000 08:07 394804     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libnet.so
+002e0000-002e1000 r--p 00013000 08:07 394804     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libnet.so
+002e1000-002e2000 rw-p 00014000 08:07 394804     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libnet.so
+002e2000-002f0000 r-xp 00000000 08:07 395815     /usr/lib/libarccredentialstore.so.1.0.0
+002f0000-002f1000 r--p 0000d000 08:07 395815     /usr/lib/libarccredentialstore.so.1.0.0
+002f1000-002f2000 rw-p 0000e000 08:07 395815     /usr/lib/libarccredentialstore.so.1.0.0
+002f2000-00323000 r-xp 00000000 08:07 395811     /usr/lib/libxmlsec1-openssl.so.1.2.9
+00323000-00325000 r--p 00030000 08:07 395811     /usr/lib/libxmlsec1-openssl.so.1.2.9
+00325000-00326000 rw-p 00032000 08:07 395811     /usr/lib/libxmlsec1-openssl.so.1.2.9
+00326000-0037b000 r-xp 00000000 08:07 395809     /usr/lib/libxmlsec1.so.1.2.9
+0037b000-0037c000 ---p 00055000 08:07 395809     /usr/lib/libxmlsec1.so.1.2.9
+0037c000-0037e000 r--p 00055000 08:07 395809     /usr/lib/libxmlsec1.so.1.2.9
+0037e000-0037f000 rw-p 00057000 08:07 395809     /usr/lib/libxmlsec1.so.1.2.9
+0037f000-00381000 r-xp 00000000 08:07 400958     /usr/lib/libglobus_gssapi_error.so.2.0.5
+00381000-00382000 r--p 00001000 08:07 400958     /usr/lib/libglobus_gssapi_error.so.2.0.5
+00382000-00383000 rw-p 00002000 08:07 400958     /usr/lib/libglobus_gssapi_error.so.2.0.5
+00383000-00385000 r-xp 00000000 08:07 133004     /lib/tls/i686/cmov/libdl-2.11.1.so
+00385000-00386000 r--p 00001000 08:07 133004     /lib/tls/i686/cmov/libdl-2.11.1.so
+00386000-00387000 rw-p 00002000 08:07 133004     /lib/tls/i686/cmov/libdl-2.11.1.so
+00387000-0039b000 r-xp 00000000 08:07 395821     /usr/lib/libarcloader.so.1.0.0
+0039b000-0039c000 r--p 00013000 08:07 395821     /usr/lib/libarcloader.so.1.0.0
+0039c000-0039d000 rw-p 00014000 08:07 395821     /usr/lib/libarcloader.so.1.0.0
+0039d000-003a0000 r-xp 00000000 08:07 393379     /usr/lib/libgmodule-2.0.so.0.2400.1
+003a0000-003a1000 r--p 00002000 08:07 393379     /usr/lib/libgmodule-2.0.so.0.2400.1
+003a1000-003a2000 rw-p 00003000 08:07 393379     /usr/lib/libgmodule-2.0.so.0.2400.1
+003a2000-003a7000 r-xp 00000000 08:07 396978     /usr/lib/libsigc-2.0.so.0.0.0
+003a7000-003a8000 r--p 00004000 08:07 396978     /usr/lib/libsigc-2.0.so.0.0.0
+003a8000-003a9000 rw-p 00005000 08:07 396978     /usr/lib/libsigc-2.0.so.0.0.0
+003a9000-003ab000 r-xp 00000000 08:07 397711     /usr/lib/libglobus_openssl.so.0.1.3
+003ab000-003ac000 r--p 00001000 08:07 397711     /usr/lib/libglobus_openssl.so.0.1.3
+003ac000-003ad000 rw-p 00002000 08:07 397711     /usr/lib/libglobus_openssl.so.0.1.3
+003ad000-003b5000 r-xp 00000000 08:07 396142     /usr/lib/libXrender.so.1.3.0
+003b5000-003b6000 r--p 00007000 08:07 396142     /usr/lib/libXrender.so.1.3.0
+003b6000-003b7000 rw-p 00008000 08:07 396142     /usr/lib/libXrender.so.1.3.0
+003b7000-003ed000 r-xp 00000000 08:07 397128     /usr/lib/libxslt.so.1.1.26
+003ed000-003ee000 r--p 00035000 08:07 397128     /usr/lib/libxslt.so.1.1.26
+003ee000-003ef000 rw-p 00036000 08:07 397128     /usr/lib/libxslt.so.1.1.26
+003ef000-003f2000 r-xp 00000000 08:07 134377     /lib/libuuid.so.1.3.0
+003f2000-003f3000 r--p 00002000 08:07 134377     /lib/libuuid.so.1.3.0
+003f3000-003f4000 rw-p 00003000 08:07 134377     /lib/libuuid.so.1.3.0
+003f4000-0040c000 r-xp 00000000 08:07 397120     /usr/lib/libxcb.so.1.1.0
+0040c000-0040d000 r--p 00017000 08:07 397120     /usr/lib/libxcb.so.1.1.0
+0040d000-0040e000 rw-p 00018000 08:07 397120     /usr/lib/libxcb.so.1.1.0
+0040e000-00412000 r-xp 00000000 08:07 393382     /usr/lib/libgthread-2.0.so.0.2400.1
+00412000-00413000 r--p 00003000 08:07 393382     /usr/lib/libgthread-2.0.so.0.2400.1
+00413000-00414000 rw-p 00004000 08:07 393382     /usr/lib/libgthread-2.0.so.0.2400.1
+00414000-0041b000 r-xp 00000000 08:07 401436     /usr/lib/libarcglobusutils.so.1.0.0
+0041b000-0041c000 r--p 00006000 08:07 401436     /usr/lib/libarcglobusutils.so.1.0.0
+0041c000-0041d000 rw-p 00007000 08:07 401436     /usr/lib/libarcglobusutils.so.1.0.0
+0041d000-00420000 r-xp 00000000 08:07 397489     /usr/lib/libglobus_callout.so.0.0.7
+00420000-00421000 r--p 00002000 08:07 397489     /usr/lib/libglobus_callout.so.0.0.7
+00421000-00422000 rw-p 00003000 08:07 397489     /usr/lib/libglobus_callout.so.0.0.7
+00422000-00424000 r-xp 00000000 08:07 131182     /lib/libcom_err.so.2.1
+00424000-00425000 r--p 00001000 08:07 131182     /lib/libcom_err.so.2.1
+00425000-00426000 rw-p 00002000 08:07 131182     /lib/libcom_err.so.2.1
+00426000-0044a000 r-xp 00000000 08:07 394773     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libjava.so
+0044a000-0044b000 r--p 00023000 08:07 394773     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libjava.so
+0044b000-0044d000 rw-p 00024000 08:07 394773     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libjava.so
+0044d000-00493000 r-xp 00000000 08:07 395814     /usr/lib/libarcdata2.so.1.0.0
+00493000-00494000 ---p 00046000 08:07 395814     /usr/lib/libarcdata2.so.1.0.0
+00494000-00495000 r--p 00046000 08:07 395814     /usr/lib/libarcdata2.so.1.0.0
+00495000-00496000 rw-p 00047000 08:07 395814     /usr/lib/libarcdata2.so.1.0.0
+00496000-004da000 r-xp 00000000 08:07 137824     /lib/i686/cmov/libssl.so.0.9.8
+004da000-004db000 r--p 00044000 08:07 137824     /lib/i686/cmov/libssl.so.0.9.8
+004db000-004de000 rw-p 00045000 08:07 137824     /lib/i686/cmov/libssl.so.0.9.8
+004de000-004e0000 r-xp 00000000 08:07 133722     /lib/libkeyutils-1.2.so
+004e0000-004e1000 r--p 00001000 08:07 133722     /lib/libkeyutils-1.2.so
+004e1000-004e2000 rw-p 00002000 08:07 133722     /lib/libkeyutils-1.2.so
+004e2000-004e5000 r-xp 00000000 08:07 394781     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/jli/libjli.so
+004e5000-004e6000 r--p 00003000 08:07 394781     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/jli/libjli.so
+004e6000-004e7000 rw-p 00004000 08:07 394781     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/jli/libjli.so
+004e7000-004f7000 r-xp 00000000 08:07 133679     /lib/tls/i686/cmov/libresolv-2.11.1.so
+004f7000-004f8000 r--p 00010000 08:07 133679     /lib/tls/i686/cmov/libresolv-2.11.1.so
+004f8000-004f9000 rw-p 00011000 08:07 133679     /lib/tls/i686/cmov/libresolv-2.11.1.so
+004f9000-004fb000 rw-p 00000000 00:00 0 
+004fb000-00505000 r-xp 00000000 08:07 399511     /usr/lib/libglobus_gss_assist.so.3.2.9
+00505000-00506000 r--p 00009000 08:07 399511     /usr/lib/libglobus_gss_assist.so.3.2.9
+00506000-00507000 rw-p 0000a000 08:07 399511     /usr/lib/libglobus_gss_assist.so.3.2.9
+00507000-0050e000 r-xp 00000000 08:07 397723     /usr/lib/libglobus_oldgaa.so.0.2.7
+0050e000-0050f000 r--p 00006000 08:07 397723     /usr/lib/libglobus_oldgaa.so.0.2.7
+0050f000-00510000 rw-p 00007000 08:07 397723     /usr/lib/libglobus_oldgaa.so.0.2.7
+00510000-00663000 r-xp 00000000 08:07 132784     /lib/tls/i686/cmov/libc-2.11.1.so
+00663000-00664000 ---p 00153000 08:07 132784     /lib/tls/i686/cmov/libc-2.11.1.so
+00664000-00666000 r--p 00153000 08:07 132784     /lib/tls/i686/cmov/libc-2.11.1.so
+00666000-00667000 rw-p 00155000 08:07 132784     /lib/tls/i686/cmov/libc-2.11.1.so
+00667000-0066a000 rw-p 00000000 00:00 0 
+0066a000-00683000 r-xp 00000000 08:07 133791     /lib/libselinux.so.1
+00683000-00684000 r--p 00018000 08:07 133791     /lib/libselinux.so.1
+00684000-00685000 rw-p 00019000 08:07 133791     /lib/libselinux.so.1
+00685000-00693000 r-xp 00000000 08:07 398604     /usr/lib/libglobus_gsi_proxy_core.so.0.4.5
+00693000-00694000 r--p 0000d000 08:07 398604     /usr/lib/libglobus_gsi_proxy_core.so.0.4.5
+00694000-00695000 rw-p 0000e000 08:07 398604     /usr/lib/libglobus_gsi_proxy_core.so.0.4.5
+00695000-006d9000 r-xp 00000000 08:07 394893     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libfontmanager.so
+006d9000-006db000 r--p 00043000 08:07 394893     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libfontmanager.so
+006db000-006dc000 rw-p 00045000 08:07 394893     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libfontmanager.so
+006dc000-006e1000 rw-p 00000000 00:00 0 
+006e1000-006e5000 r-xp 00000000 08:07 397715     /usr/lib/libglobus_gsi_cert_utils.so.0.6.6
+006e5000-006e6000 r--p 00003000 08:07 397715     /usr/lib/libglobus_gsi_cert_utils.so.0.6.6
+006e6000-006e7000 rw-p 00004000 08:07 397715     /usr/lib/libglobus_gsi_cert_utils.so.0.6.6
+006e7000-006e8000 r-xp 00000000 08:07 395827     /usr/lib/arc/libmodcrypto.so
+006e8000-006e9000 r--p 00000000 08:07 395827     /usr/lib/arc/libmodcrypto.so
+006e9000-006ea000 rw-p 00001000 08:07 395827     /usr/lib/arc/libmodcrypto.so
+006ea000-006f1000 r-xp 00000000 08:07 394778     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libzip.so
+006f1000-006f2000 r--p 00006000 08:07 394778     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libzip.so
+006f2000-006f3000 rw-p 00007000 08:07 394778     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libzip.so
+006f3000-006f6000 r-xp 00000000 08:07 397705     /usr/lib/libglobus_openssl_error.so.0.0.14
+006f6000-006f7000 r--p 00002000 08:07 397705     /usr/lib/libglobus_openssl_error.so.0.0.14
+006f7000-006f8000 rw-p 00003000 08:07 397705     /usr/lib/libglobus_openssl_error.so.0.0.14
+006f8000-006ff000 r-xp 00000000 08:07 394777     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libnio.so
+006ff000-00700000 r--p 00006000 08:07 394777     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libnio.so
+00700000-00701000 rw-p 00007000 08:07 394777     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libnio.so
+00701000-0070e000 r-xp 00000000 08:07 398600     /usr/lib/libglobus_gsi_credential.so.1.2.5
+0070e000-0070f000 r--p 0000c000 08:07 398600     /usr/lib/libglobus_gsi_credential.so.1.2.5
+0070f000-00710000 rw-p 0000d000 08:07 398600     /usr/lib/libglobus_gsi_credential.so.1.2.5
+00710000-00711000 r-xp 00000000 08:07 395824     /usr/lib/arc/libmodcredential.so
+00711000-00712000 r--p 00000000 08:07 395824     /usr/lib/arc/libmodcredential.so
+00712000-00713000 rw-p 00001000 08:07 395824     /usr/lib/arc/libmodcredential.so
+00713000-00714000 r-xp 00000000 00:00 0          [vdso]
+00714000-00718000 r-xp 00000000 08:07 397707     /usr/lib/libglobus_proxy_ssl.so.1.1.3
+00718000-00719000 r--p 00003000 08:07 397707     /usr/lib/libglobus_proxy_ssl.so.1.1.3
+00719000-0071a000 rw-p 00004000 08:07 397707     /usr/lib/libglobus_proxy_ssl.so.1.1.3
+0071b000-00722000 r-xp 00000000 08:07 394789     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/native_threads/libhpi.so
+00722000-00723000 r--p 00006000 08:07 394789     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/native_threads/libhpi.so
+00723000-00724000 rw-p 00007000 08:07 394789     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/native_threads/libhpi.so
+00724000-0072a000 r-xp 00000000 08:07 395327     /usr/lib/libkrb5support.so.0.1
+0072a000-0072b000 r--p 00005000 08:07 395327     /usr/lib/libkrb5support.so.0.1
+0072b000-0072c000 rw-p 00006000 08:07 395327     /usr/lib/libkrb5support.so.0.1
+0072c000-0073f000 r-xp 00000000 08:07 133563     /lib/tls/i686/cmov/libnsl-2.11.1.so
+0073f000-00740000 r--p 00012000 08:07 133563     /lib/tls/i686/cmov/libnsl-2.11.1.so
+00740000-00741000 rw-p 00013000 08:07 133563     /lib/tls/i686/cmov/libnsl-2.11.1.so
+00741000-00743000 rw-p 00000000 00:00 0 
+00743000-0079b000 r-xp 00000000 08:07 395816     /usr/lib/libarccredential.so.1.0.0
+0079b000-0079c000 r--p 00057000 08:07 395816     /usr/lib/libarccredential.so.1.0.0
+0079c000-0079d000 rw-p 00058000 08:07 395816     /usr/lib/libarccredential.so.1.0.0
+0079d000-007b1000 r-xp 00000000 08:07 400972     /usr/lib/libglobus_io.so.3.3.3
+007b1000-007b2000 r--p 00013000 08:07 400972     /usr/lib/libglobus_io.so.3.3.3
+007b2000-007b3000 rw-p 00014000 08:07 400972     /usr/lib/libglobus_io.so.3.3.3
+007b3000-007ba000 r-xp 00000000 08:07 396752     /usr/lib/libltdl.so.7.2.1
+007ba000-007bb000 r--p 00006000 08:07 396752     /usr/lib/libltdl.so.7.2.1
+007bb000-007bc000 rw-p 00007000 08:07 396752     /usr/lib/libltdl.so.7.2.1
+007bc000-007ca000 r-xp 00000000 08:07 396120     /usr/lib/libXext.so.6.4.0
+007ca000-007cb000 r--p 0000d000 08:07 396120     /usr/lib/libXext.so.6.4.0
+007cb000-007cc000 rw-p 0000e000 08:07 396120     /usr/lib/libXext.so.6.4.0
+007cc000-008e5000 r-xp 00000000 08:07 396103     /usr/lib/libX11.so.6.3.0
+008e5000-008e6000 r--p 00118000 08:07 396103     /usr/lib/libX11.so.6.3.0
+008e6000-008e8000 rw-p 00119000 08:07 396103     /usr/lib/libX11.so.6.3.0
+008e8000-008e9000 rw-p 00000000 00:00 0 
+008e9000-008f1000 r-xp 00000000 08:07 397724     /usr/lib/libglobus_gsi_callback.so.0.2.7
+008f1000-008f2000 r--p 00007000 08:07 397724     /usr/lib/libglobus_gsi_callback.so.0.2.7
+008f2000-008f3000 rw-p 00008000 08:07 397724     /usr/lib/libglobus_gsi_callback.so.0.2.7
+008f3000-008f6000 r-xp 00000000 08:07 133715     /lib/libgpg-error.so.0.4.0
+008f6000-008f7000 r--p 00002000 08:07 133715     /lib/libgpg-error.so.0.4.0
+008f7000-008f8000 rw-p 00003000 08:07 133715     /lib/libgpg-error.so.0.4.0
+008fa000-00915000 r-xp 00000000 08:07 131100     /lib/ld-2.11.1.so
+00915000-00916000 r--p 0001a000 08:07 131100     /lib/ld-2.11.1.so
+00916000-00917000 rw-p 0001b000 08:07 131100     /lib/ld-2.11.1.so
+00917000-00936000 r-xp 00000000 08:07 401183     /usr/lib/libglobus_ftp_control.so.1.1.11
+00936000-00937000 r--p 0001f000 08:07 401183     /usr/lib/libglobus_ftp_control.so.1.1.11
+00937000-00938000 rw-p 00020000 08:07 401183     /usr/lib/libglobus_ftp_control.so.1.1.11
+00938000-0093a000 r-xp 00000000 08:07 133747     /lib/libnss_mdns4_minimal.so.2
+0093a000-0093b000 r--p 00001000 08:07 133747     /lib/libnss_mdns4_minimal.so.2
+0093b000-0093c000 rw-p 00002000 08:07 133747     /lib/libnss_mdns4_minimal.so.2
+0093e000-00944000 r-xp 00000000 08:07 133569     /lib/tls/i686/cmov/libnss_compat-2.11.1.so
+00944000-00945000 r--p 00006000 08:07 133569     /lib/tls/i686/cmov/libnss_compat-2.11.1.so
+00945000-00946000 rw-p 00007000 08:07 133569     /lib/tls/i686/cmov/libnss_compat-2.11.1.so
+00946000-0095e000 r-xp 00000000 08:07 399508     /usr/lib/libglobus_gssapi_gsi.so.4.3.5
+0095e000-0095f000 r--p 00017000 08:07 399508     /usr/lib/libglobus_gssapi_gsi.so.4.3.5
+0095f000-00960000 rw-p 00018000 08:07 399508     /usr/lib/libglobus_gssapi_gsi.so.4.3.5
+00961000-00968000 r-xp 00000000 08:07 133680     /lib/tls/i686/cmov/librt-2.11.1.so
+00968000-00969000 r--p 00006000 08:07 133680     /lib/tls/i686/cmov/librt-2.11.1.so
+00969000-0096a000 rw-p 00007000 08:07 133680     /lib/tls/i686/cmov/librt-2.11.1.so
+0096a000-00974000 r-xp 00000000 08:07 397721     /usr/lib/libglobus_gsi_sysconfig.so.1.2.1
+00974000-00975000 r--p 00009000 08:07 397721     /usr/lib/libglobus_gsi_sysconfig.so.1.2.1
+00975000-00976000 rw-p 0000a000 08:07 397721     /usr/lib/libglobus_gsi_sysconfig.so.1.2.1
+00976000-00983000 r-xp 00000000 08:07 401249     /usr/lib/arc/libdmcldap.so
+00983000-00984000 r--p 0000c000 08:07 401249     /usr/lib/arc/libdmcldap.so
+00984000-00985000 rw-p 0000d000 08:07 401249     /usr/lib/arc/libdmcldap.so
+00985000-00989000 r-xp 00000000 08:07 133640     /lib/tls/i686/cmov/libnss_dns-2.11.1.so
+00989000-0098a000 r--p 00004000 08:07 133640     /lib/tls/i686/cmov/libnss_dns-2.11.1.so
+0098a000-0098b000 rw-p 00005000 08:07 133640     /lib/tls/i686/cmov/libnss_dns-2.11.1.so
+0098d000-009b1000 r-xp 00000000 08:07 133007     /lib/tls/i686/cmov/libm-2.11.1.so
+009b1000-009b2000 r--p 00023000 08:07 133007     /lib/tls/i686/cmov/libm-2.11.1.so
+009b2000-009b3000 rw-p 00024000 08:07 133007     /lib/tls/i686/cmov/libm-2.11.1.so
+009b3000-00a88000 r-xp 00000000 08:07 401443     /usr/lib/jni/libjarc.so
+00a88000-00a89000 r--p 000d4000 08:07 401443     /usr/lib/jni/libjarc.so
+00a89000-00a8a000 rw-p 000d5000 08:07 401443     /usr/lib/jni/libjarc.so
+00a8a000-00abc000 r-xp 00000000 08:07 395822     /usr/lib/libarcmessage.so.1.0.0
+00abc000-00abd000 r--p 00032000 08:07 395822     /usr/lib/libarcmessage.so.1.0.0
+00abd000-00abe000 rw-p 00033000 08:07 395822     /usr/lib/libarcmessage.so.1.0.0
+00abe000-00afb000 r-xp 00000000 08:07 393371     /usr/lib/libgobject-2.0.so.0.2400.1
+00afb000-00afc000 r--p 0003c000 08:07 393371     /usr/lib/libgobject-2.0.so.0.2400.1
+00afc000-00afd000 rw-p 0003d000 08:07 393371     /usr/lib/libgobject-2.0.so.0.2400.1
+00afd000-00b08000 r-xp 00000000 08:07 395388     /usr/lib/liblber-2.4.so.2.5.4
+00b08000-00b09000 r--p 0000a000 08:07 395388     /usr/lib/liblber-2.4.so.2.5.4
+00b09000-00b0a000 rw-p 0000b000 08:07 395388     /usr/lib/liblber-2.4.so.2.5.4
+00b0e000-00b18000 r-xp 00000000 08:07 133652     /lib/tls/i686/cmov/libnss_files-2.11.1.so
+00b18000-00b19000 r--p 00009000 08:07 133652     /lib/tls/i686/cmov/libnss_files-2.11.1.so
+00b19000-00b1a000 rw-p 0000a000 08:07 133652     /lib/tls/i686/cmov/libnss_files-2.11.1.so
+00b1a000-00b6f000 r-xp 00000000 08:07 396465     /usr/lib/libglibmm-2.4.so.1.3.0
+00b6f000-00b70000 ---p 00055000 08:07 396465     /usr/lib/libglibmm-2.4.so.1.3.0
+00b70000-00b71000 r--p 00055000 08:07 396465     /usr/lib/libglibmm-2.4.so.1.3.0
+00b71000-00b72000 rw-p 00056000 08:07 396465     /usr/lib/libglibmm-2.4.so.1.3.0
+00b72000-00b88000 r-xp 00000000 08:07 396968     /usr/lib/libsasl2.so.2.0.23
+00b88000-00b89000 r--p 00015000 08:07 396968     /usr/lib/libsasl2.so.2.0.23
+00b89000-00b8a000 rw-p 00016000 08:07 396968     /usr/lib/libsasl2.so.2.0.23
+00b8c000-00b94000 r-xp 00000000 08:07 133655     /lib/tls/i686/cmov/libnss_nis-2.11.1.so
+00b94000-00b95000 r--p 00007000 08:07 133655     /lib/tls/i686/cmov/libnss_nis-2.11.1.so
+00b95000-00b96000 rw-p 00008000 08:07 133655     /lib/tls/i686/cmov/libnss_nis-2.11.1.so
+00b96000-00ba5000 r-xp 00000000 08:07 397023     /usr/lib/libtasn1.so.3.1.7
+00ba5000-00ba6000 r--p 0000e000 08:07 397023     /usr/lib/libtasn1.so.3.1.7
+00ba6000-00ba7000 rw-p 0000f000 08:07 397023     /usr/lib/libtasn1.so.3.1.7
+00bb1000-00bb5000 r-xp 00000000 08:07 396122     /usr/lib/libXfixes.so.3.1.0
+00bb5000-00bb6000 r--p 00003000 08:07 396122     /usr/lib/libXfixes.so.3.1.0
+00bb6000-00bb7000 rw-p 00004000 08:07 396122     /usr/lib/libXfixes.so.3.1.0
+00bb7000-00bb9000 r-xp 00000000 08:07 396107     /usr/lib/libXau.so.6.0.0
+00bb9000-00bba000 r--p 00001000 08:07 396107     /usr/lib/libXau.so.6.0.0
+00bba000-00bbb000 rw-p 00002000 08:07 396107     /usr/lib/libXau.so.6.0.0
+00bbb000-00c81000 r-xp 00000000 08:07 395830     /usr/lib/libarcclient.so.1.0.0
+00c81000-00c82000 r--p 000c6000 08:07 395830     /usr/lib/libarcclient.so.1.0.0
+00c82000-00c83000 rw-p 000c7000 08:07 395830     /usr/lib/libarcclient.so.1.0.0
+00c8b000-00cba000 r-xp 00000000 08:07 133767     /lib/libpcre.so.3.12.1
+00cba000-00cbb000 r--p 0002e000 08:07 133767     /lib/libpcre.so.3.12.1
+00cbb000-00cbc000 rw-p 0002f000 08:07 133767     /lib/libpcre.so.3.12.1
+00cbd000-00cef000 r-xp 00000000 08:07 401432     /usr/lib/arc/libaccARC0.so
+00cef000-00cf0000 r--p 00031000 08:07 401432     /usr/lib/arc/libaccARC0.so
+00cf0000-00cf1000 rw-p 00032000 08:07 401432     /usr/lib/arc/libaccARC0.so
+00cf1000-00cfa000 r-xp 00000000 08:07 400968     /usr/lib/libglobus_xio_gsi_driver.so.0.0.6
+00cfa000-00cfb000 r--p 00008000 08:07 400968     /usr/lib/libglobus_xio_gsi_driver.so.0.0.6
+00cfb000-00cfc000 rw-p 00009000 08:07 400968     /usr/lib/libglobus_xio_gsi_driver.so.0.0.6
+00d08000-00d14000 r-xp 00000000 08:07 396128     /usr/lib/libXi.so.6.1.0
+00d14000-00d15000 r--p 0000c000 08:07 396128     /usr/lib/libXi.so.6.1.0
+00d15000-00d16000 rw-p 0000d000 08:07 396128     /usr/lib/libXi.so.6.1.0
+00d16000-00d29000 r-xp 00000000 08:07 133824     /lib/libz.so.1.2.3.3
+00d29000-00d2a000 r--p 00012000 08:07 133824     /lib/libz.so.1.2.3.3
+00d2a000-00d2b000 rw-p 00013000 08:07 133824     /lib/libz.so.1.2.3.3
+00d2b000-00d52000 r-xp 00000000 08:07 401245     /usr/lib/arc/libaccEMIREG.so
+00d52000-00d53000 r--p 00026000 08:07 401245     /usr/lib/arc/libaccEMIREG.so
+00d53000-00d54000 rw-p 00027000 08:07 401245     /usr/lib/arc/libaccEMIREG.so
+00d5c000-00d67000 r-xp 00000000 08:07 395819     /usr/lib/libarcxmlsec.so.1.0.0
+00d67000-00d68000 r--p 0000a000 08:07 395819     /usr/lib/libarcxmlsec.so.1.0.0
+00d68000-00d69000 rw-p 0000b000 08:07 395819     /usr/lib/libarcxmlsec.so.1.0.0
+00d6f000-00d84000 r-xp 00000000 08:07 133675     /lib/tls/i686/cmov/libpthread-2.11.1.so
+00d84000-00d85000 r--p 00014000 08:07 133675     /lib/tls/i686/cmov/libpthread-2.11.1.so
+00d85000-00d86000 rw-p 00015000 08:07 133675     /lib/tls/i686/cmov/libpthread-2.11.1.so
+00d86000-00d88000 rw-p 00000000 00:00 0 
+00d88000-011db000 r-xp 00000000 08:07 394786     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/client/libjvm.so
+011db000-011dc000 ---p 00453000 08:07 394786     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/client/libjvm.so
+011dc000-011f3000 r--p 00453000 08:07 394786     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/client/libjvm.so
+011f3000-01200000 rw-p 0046a000 08:07 394786     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/client/libjvm.so
+01200000-0161c000 rw-p 00000000 00:00 0 
+0161c000-016b4000 r-xp 00000000 08:07 393656     /usr/lib/libgiomm-2.4.so.1.3.0
+016b4000-016bb000 r--p 00097000 08:07 393656     /usr/lib/libgiomm-2.4.so.1.3.0
+016bb000-016bc000 rw-p 0009e000 08:07 393656     /usr/lib/libgiomm-2.4.so.1.3.0
+016bc000-01756000 r-xp 00000000 08:07 393551     /usr/lib/libgio-2.0.so.0.2400.1
+01756000-01757000 ---p 0009a000 08:07 393551     /usr/lib/libgio-2.0.so.0.2400.1
+01757000-01758000 r--p 0009a000 08:07 393551     /usr/lib/libgio-2.0.so.0.2400.1
+01758000-01759000 rw-p 0009b000 08:07 393551     /usr/lib/libgio-2.0.so.0.2400.1
+01759000-0175a000 rw-p 00000000 00:00 0 
+0175a000-01804000 r-xp 00000000 08:07 395754     /usr/lib/libkrb5.so.3.3
+01804000-01805000 ---p 000aa000 08:07 395754     /usr/lib/libkrb5.so.3.3
+01805000-0180a000 r--p 000aa000 08:07 395754     /usr/lib/libkrb5.so.3.3
+0180a000-0180b000 rw-p 000af000 08:07 395754     /usr/lib/libkrb5.so.3.3
+0180b000-01826000 r-xp 00000000 08:07 401236     /usr/lib/arc/libdmcarc.so
+01826000-01827000 r--p 0001a000 08:07 401236     /usr/lib/arc/libdmcarc.so
+01827000-01828000 rw-p 0001b000 08:07 401236     /usr/lib/arc/libdmcarc.so
+01828000-01833000 r-xp 00000000 08:07 401196     /usr/lib/libglobus_rls_client.so.5.0.2
+01833000-01834000 r--p 0000a000 08:07 401196     /usr/lib/libglobus_rls_client.so.5.0.2
+01834000-01835000 rw-p 0000b000 08:07 401196     /usr/lib/libglobus_rls_client.so.5.0.2
+01c1f000-01c58000 r-xp 00000000 08:07 400963     /usr/lib/libglobus_xio.so.0.2.8
+01c58000-01c59000 ---p 00039000 08:07 400963     /usr/lib/libglobus_xio.so.0.2.8
+01c59000-01c5a000 r--p 00039000 08:07 400963     /usr/lib/libglobus_xio.so.0.2.8
+01c5a000-01c5b000 rw-p 0003a000 08:07 400963     /usr/lib/libglobus_xio.so.0.2.8
+01dfc000-01e16000 r-xp 00000000 08:07 401424     /usr/lib/arc/libdmclfc.so
+01e16000-01e17000 r--p 0001a000 08:07 401424     /usr/lib/arc/libdmclfc.so
+01e17000-01e18000 rw-p 0001b000 08:07 401424     /usr/lib/arc/libdmclfc.so
+01e7d000-01ea8000 r-xp 00000000 08:07 401241     /usr/lib/arc/libaccCREAM.so
+01ea8000-01ea9000 r--p 0002a000 08:07 401241     /usr/lib/arc/libaccCREAM.so
+01ea9000-01eaa000 rw-p 0002b000 08:07 401241     /usr/lib/arc/libaccCREAM.so
+01f8c000-01fba000 r-xp 00000000 08:07 401433     /usr/lib/arc/libdmcgridftp.so
+01fba000-01fbb000 r--p 0002d000 08:07 401433     /usr/lib/arc/libdmcgridftp.so
+01fbb000-01fbc000 rw-p 0002e000 08:07 401433     /usr/lib/arc/libdmcgridftp.so
+02831000-02853000 r-xp 00000000 08:07 393690     /usr/lib/libk5crypto.so.3.1
+02853000-02854000 r--p 00021000 08:07 393690     /usr/lib/libk5crypto.so.3.1
+02854000-02855000 rw-p 00022000 08:07 393690     /usr/lib/libk5crypto.so.3.1
+02ff5000-0312d000 r-xp 00000000 08:07 137823     /lib/i686/cmov/libcrypto.so.0.9.8
+0312d000-03135000 r--p 00137000 08:07 137823     /lib/i686/cmov/libcrypto.so.0.9.8
+03135000-03143000 rw-p 0013f000 08:07 137823     /lib/i686/cmov/libcrypto.so.0.9.8
+03143000-03147000 rw-p 00000000 00:00 0 
+04131000-04185000 r-xp 00000000 08:07 401223     /usr/lib/arc/libaccARC1.so
+04185000-04186000 r--p 00053000 08:07 401223     /usr/lib/arc/libaccARC1.so
+04186000-04187000 rw-p 00054000 08:07 401223     /usr/lib/arc/libaccARC1.so
+04472000-044a4000 r-xp 00000000 08:07 397483     /usr/lib/libglobus_common.so.0.11.5
+044a4000-044a5000 r--p 00031000 08:07 397483     /usr/lib/libglobus_common.so.0.11.5
+044a5000-044a6000 rw-p 00032000 08:07 397483     /usr/lib/libglobus_common.so.0.11.5
+044a6000-044a7000 rw-p 00000000 00:00 0 
+04614000-0466b000 r-xp 00000000 08:07 401222     /usr/lib/arc/libaccJobDescriptionParser.so
+0466b000-0466c000 r--p 00057000 08:07 401222     /usr/lib/arc/libaccJobDescriptionParser.so
+0466c000-0466d000 rw-p 00058000 08:07 401222     /usr/lib/arc/libaccJobDescriptionParser.so
+04a72000-04ac3000 r-xp 00000000 08:07 401219     /usr/lib/arc/libdmcsrm.so
+04ac3000-04ac4000 r--p 00050000 08:07 401219     /usr/lib/arc/libdmcsrm.so
+04ac4000-04ac5000 rw-p 00051000 08:07 401219     /usr/lib/arc/libdmcsrm.so
+050dd000-05121000 r-xp 00000000 08:07 395389     /usr/lib/libldap_r-2.4.so.2.5.4
+05121000-05122000 r--p 00043000 08:07 395389     /usr/lib/libldap_r-2.4.so.2.5.4
+05122000-05123000 rw-p 00044000 08:07 395389     /usr/lib/libldap_r-2.4.so.2.5.4
+05123000-05124000 rw-p 00000000 00:00 0 
+055b1000-055e1000 r-xp 00000000 08:07 401192     /usr/lib/libglobus_ftp_client.so.2.3.3
+055e1000-055e2000 ---p 00030000 08:07 401192     /usr/lib/libglobus_ftp_client.so.2.3.3
+055e2000-055e3000 r--p 00030000 08:07 401192     /usr/lib/libglobus_ftp_client.so.2.3.3
+055e3000-055e4000 rw-p 00031000 08:07 401192     /usr/lib/libglobus_ftp_client.so.2.3.3
+05602000-0561f000 r-xp 00000000 08:07 401434     /usr/lib/arc/libdmcrls.so
+0561f000-05620000 ---p 0001d000 08:07 401434     /usr/lib/arc/libdmcrls.so
+05620000-05621000 r--p 0001d000 08:07 401434     /usr/lib/arc/libdmcrls.so
+05621000-05622000 rw-p 0001e000 08:07 401434     /usr/lib/arc/libdmcrls.so
+05690000-05726000 r-xp 00000000 08:07 396514     /usr/lib/libgnutls.so.26.14.12
+05726000-0572a000 r--p 00095000 08:07 396514     /usr/lib/libgnutls.so.26.14.12
+0572a000-0572b000 rw-p 00099000 08:07 396514     /usr/lib/libgnutls.so.26.14.12
+05ccb000-05cdf000 r-xp 00000000 08:07 401216     /usr/lib/liblfc.so.1.7.4
+05cdf000-05ce0000 r--p 00014000 08:07 401216     /usr/lib/liblfc.so.1.7.4
+05ce0000-05ce1000 rw-p 00015000 08:07 401216     /usr/lib/liblfc.so.1.7.4
+060f7000-0610b000 r-xp 00000000 08:07 401243     /usr/lib/arc/libdmchttp.so
+0610b000-0610c000 r--p 00013000 08:07 401243     /usr/lib/arc/libdmchttp.so
+0610c000-0610d000 rw-p 00014000 08:07 401243     /usr/lib/arc/libdmchttp.so
+0622b000-0629b000 r-xp 00000000 08:07 133711     /lib/libgcrypt.so.11.5.2
+0629b000-0629c000 r--p 00070000 08:07 133711     /lib/libgcrypt.so.11.5.2
+0629c000-0629e000 rw-p 00071000 08:07 133711     /lib/libgcrypt.so.11.5.2
+062c6000-0631d000 r-xp 00000000 08:07 395813     /usr/lib/libarcws.so.1.0.0
+0631d000-0631e000 r--p 00057000 08:07 395813     /usr/lib/libarcws.so.1.0.0
+0631e000-0631f000 rw-p 00058000 08:07 395813     /usr/lib/libarcws.so.1.0.0
+06412000-06536000 r-xp 00000000 08:07 395395     /usr/lib/libxml2.so.2.7.6
+06536000-06537000 ---p 00124000 08:07 395395     /usr/lib/libxml2.so.2.7.6
+06537000-0653b000 r--p 00124000 08:07 395395     /usr/lib/libxml2.so.2.7.6
+0653b000-0653c000 rw-p 00128000 08:07 395395     /usr/lib/libxml2.so.2.7.6
+0653c000-0653d000 rw-p 00000000 00:00 0 
+068b9000-06981000 r-xp 00000000 08:07 133806     /lib/libglib-2.0.so.0.2400.1
+06981000-06982000 r--p 000c7000 08:07 133806     /lib/libglib-2.0.so.0.2400.1
+06982000-06983000 rw-p 000c8000 08:07 133806     /lib/libglib-2.0.so.0.2400.1
+06ce9000-06d13000 r-xp 00000000 08:07 401211     /usr/lib/liblcgdm.so.1.7.4
+06d13000-06d14000 r--p 00029000 08:07 401211     /usr/lib/liblcgdm.so.1.7.4
+06d14000-06d15000 rw-p 0002a000 08:07 401211     /usr/lib/liblcgdm.so.1.7.4
+073fc000-074e5000 r-xp 00000000 08:07 397016     /usr/lib/libstdc++.so.6.0.13
+074e5000-074e6000 ---p 000e9000 08:07 397016     /usr/lib/libstdc++.so.6.0.13
+074e6000-074ea000 r--p 000e9000 08:07 397016     /usr/lib/libstdc++.so.6.0.13
+074ea000-074eb000 rw-p 000ed000 08:07 397016     /usr/lib/libstdc++.so.6.0.13
+074eb000-074f2000 rw-p 00000000 00:00 0 
+07680000-07722000 r-xp 00000000 08:07 395829     /usr/lib/libarccommon.so.1.0.0
+07722000-07723000 r--p 000a2000 08:07 395829     /usr/lib/libarccommon.so.1.0.0
+07723000-07724000 rw-p 000a3000 08:07 395829     /usr/lib/libarccommon.so.1.0.0
+0773d000-0776a000 r-xp 00000000 08:07 395324     /usr/lib/libgssapi_krb5.so.2.2
+0776a000-0776b000 r--p 0002d000 08:07 395324     /usr/lib/libgssapi_krb5.so.2.2
+0776b000-0776c000 rw-p 0002e000 08:07 395324     /usr/lib/libgssapi_krb5.so.2.2
+07b00000-07b23000 r-xp 00000000 08:07 395823     /usr/lib/libarcsecurity.so.1.0.0
+07b23000-07b24000 r--p 00022000 08:07 395823     /usr/lib/libarcsecurity.so.1.0.0
+07b24000-07b25000 rw-p 00023000 08:07 395823     /usr/lib/libarcsecurity.so.1.0.0
+07d52000-07d69000 r-xp 00000000 08:07 401221     /usr/lib/arc/libdmcfile.so
+07d69000-07d6a000 r--p 00016000 08:07 401221     /usr/lib/arc/libdmcfile.so
+07d6a000-07d6b000 rw-p 00017000 08:07 401221     /usr/lib/arc/libdmcfile.so
+08048000-08051000 r-xp 00000000 08:07 394747     /usr/lib/jvm/java-6-openjdk/jre/bin/java
+08051000-08052000 r--p 00008000 08:07 394747     /usr/lib/jvm/java-6-openjdk/jre/bin/java
+08052000-08053000 rw-p 00009000 08:07 394747     /usr/lib/jvm/java-6-openjdk/jre/bin/java
+0870e000-088ee000 rw-p 00000000 00:00 0          [heap]
+70630000-70b60000 rw-p 00000000 00:00 0 
+70b60000-7ac30000 rw-p 00000000 00:00 0 
+7ac30000-7b690000 rw-p 00000000 00:00 0 
+7b690000-8f830000 rw-p 00000000 00:00 0 
+8f830000-90430000 rw-p 00000000 00:00 0 
+90430000-93830000 rw-p 00000000 00:00 0 
+93830000-93f89000 r--s 00001000 08:07 399411     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/client/classes.jsa
+93f89000-94230000 rw-p 00000000 00:00 0 
+94230000-94971000 rw-p 0075a000 08:07 399411     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/client/classes.jsa
+94971000-94e30000 rw-p 00000000 00:00 0 
+94e30000-94f2b000 rw-p 00e9b000 08:07 399411     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/client/classes.jsa
+94f2b000-95230000 rw-p 00000000 00:00 0 
+95230000-95238000 r-xs 00f96000 08:07 399411     /usr/lib/jvm/java-6-openjdk/jre/lib/i386/client/classes.jsa
+95238000-95630000 rw-p 00000000 00:00 0 
+adaa8000-adaa9000 ---p 00000000 00:00 0 
+adaa9000-aeaa9000 rw-p 00000000 00:00 0 
+b2aac000-b2aad000 ---p 00000000 00:00 0 
+b2aad000-b32ad000 rw-p 00000000 00:00 0 
+b32ad000-b32ae000 ---p 00000000 00:00 0 
+b32ae000-b3aae000 rw-p 00000000 00:00 0 
+b3aae000-b3aaf000 ---p 00000000 00:00 0 
+b3aaf000-b4aaf000 rw-p 00000000 00:00 0 
+b4b00000-b4b5a000 rw-p 00000000 00:00 0 
+b4b5a000-b4c00000 ---p 00000000 00:00 0 
+b4c21000-b4c24000 rw-s 00000000 00:04 187662392  /SYSV00000000 (deleted)
+b4cc8000-b4cc9000 rw-p 00000000 00:00 0 
+b4cc9000-b4ccc000 ---p 00000000 00:00 0 
+b4ccc000-b4d1a000 rw-p 00000000 00:00 0 
+b4e5c000-b4e5e000 rw-p 00000000 00:00 0 
+b4e5e000-b4e61000 ---p 00000000 00:00 0 
+b4e61000-b4eaf000 rw-p 00000000 00:00 0 
+b4eaf000-b4eb2000 ---p 00000000 00:00 0 
+b4eb2000-b4f00000 rw-p 00000000 00:00 0 
+b4f00000-b4f03000 ---p 00000000 00:00 0 
+b4f03000-b4f51000 rw-p 00000000 00:00 0 
+b4f51000-b4f57000 r--s 000fc000 08:07 394741     /usr/lib/jvm/java-6-openjdk/jre/lib/resources.jar
+b4f57000-b4f58000 r--s 00000000 08:07 786513     /var/cache/fontconfig/c05880de57d1f5e948fdfacc138775d9-le32d4.cache-3
+b4f58000-b4f5e000 r--s 00000000 08:07 786508     /var/cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le32d4.cache-3
+b4f5e000-b4f60000 r--s 00000000 08:07 788475     /var/cache/fontconfig/99e8ed0e538f840c565b6ed5dad60d56-le32d4.cache-3
+b4f60000-b4f62000 r--s 00000000 08:07 788782     /var/cache/fontconfig/f24b2111ab8703b4e963115a8cf14259-le32d4.cache-3
+b4f62000-b4f65000 r--s 00000000 08:07 786510     /var/cache/fontconfig/e383d7ea5fbe662a33d9b44caf393297-le32d4.cache-3
+b4f65000-b4f66000 r--s 00000000 08:07 786527     /var/cache/fontconfig/e7071f4a29fa870f4323321c154eba04-le32d4.cache-3
+b4f66000-b4f69000 r--s 00000000 08:07 786502     /var/cache/fontconfig/6eb3985aa4124903f6ff08ba781cd364-le32d4.cache-3
+b4f69000-b4f6a000 r--s 00000000 08:07 786494     /var/cache/fontconfig/4c73fe0c47614734b17d736dbde7580a-le32d4.cache-3
+b4f6a000-b4f6b000 r--s 00000000 08:07 786486     /var/cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le32d4.cache-3
+b4f6b000-b4f6c000 r--s 00000000 08:07 786500     /var/cache/fontconfig/6a53c69dea097a2d716e069445527da8-le32d4.cache-3
+b4f6c000-b4f70000 r--s 00000000 08:07 786512     /var/cache/fontconfig/a755afe4a08bf5b97852ceb7400b47bc-le32d4.cache-3
+b4f70000-b4f77000 r--s 00000000 08:07 790747     /var/cache/fontconfig/6d41288fd70b0be22e8c3a91e032eec0-le32d4.cache-3
+b4f77000-b4f82000 r--s 00000000 08:07 790714     /var/cache/fontconfig/0f34bcd4b6ee430af32735b75db7f02b-le32d4.cache-3
+b4f82000-b4f85000 r--s 00000000 08:07 786520     /var/cache/fontconfig/d60319d88cac85ba9e1a07bd06cfbb8c-le32d4.cache-3
+b4f85000-b4f86000 r--s 00000000 08:07 790592     /var/cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le32d4.cache-3
+b4f86000-b4f8e000 r--s 00000000 08:07 786519     /var/cache/fontconfig/d52a8644073d54c13679302ca1180695-le32d4.cache-3
+b4f8e000-b4f90000 r--s 00000000 08:07 786524     /var/cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le32d4.cache-3
+b4f90000-b4f93000 r--s 00000000 08:07 789093     /var/cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le32d4.cache-3
+b4f93000-b4f94000 r--s 00000000 08:07 786513     /var/cache/fontconfig/c05880de57d1f5e948fdfacc138775d9-le32d4.cache-3
+b4f94000-b4f9a000 r--s 00000000 08:07 786508     /var/cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le32d4.cache-3
+b4f9a000-b4f9c000 r--s 00000000 08:07 788475     /var/cache/fontconfig/99e8ed0e538f840c565b6ed5dad60d56-le32d4.cache-3
+b4f9c000-b4f9e000 r--s 00000000 08:07 788782     /var/cache/fontconfig/f24b2111ab8703b4e963115a8cf14259-le32d4.cache-3
+b4f9e000-b4fa1000 r--s 00000000 08:07 786510     /var/cache/fontconfig/e383d7ea5fbe662a33d9b44caf393297-le32d4.cache-3
+b4fa1000-b4fa2000 r--s 00000000 08:07 786527     /var/cache/fontconfig/e7071f4a29fa870f4323321c154eba04-le32d4.cache-3
+b4fa2000-b4fa5000 r--s 00000000 08:07 786502     /var/cache/fontconfig/6eb3985aa4124903f6ff08ba781cd364-le32d4.cache-3
+b4fa5000-b4fa6000 r--s 00000000 08:07 786494     /var/cache/fontconfig/4c73fe0c47614734b17d736dbde7580a-le32d4.cache-3
+b4fa6000-b4fa7000 r--s 00000000 08:07 786486     /var/cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le32d4.cache-3
+b4fa7000-b4fa8000 r--s 00000000 08:07 786500     /var/cache/fontconfig/6a53c69dea097a2d716e069445527da8-le32d4.cache-3
+b4fa8000-b4fac000 r--s 00000000 08:07 786512     /var/cache/fontconfig/a755afe4a08bf5b97852ceb7400b47bc-le32d4.cache-3
+b4fac000-b4fb3000 r--s 00000000 08:07 790747     /var/cache/fontconfig/6d41288fd70b0be22e8c3a91e032eec0-le32d4.cache-3
+b4fb3000-b4fbe000 r--s 00000000 08:07 790714     /var/cache/fontconfig/0f34bcd4b6ee430af32735b75db7f02b-le32d4.cache-3
+b4fbe000-b4fc1000 r--s 00000000 08:07 786520     /var/cache/fontconfig/d60319d88cac85ba9e1a07bd06cfbb8c-le32d4.cache-3
+b4fc1000-b4fc2000 r--s 00000000 08:07 790592     /var/cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le32d4.cache-3
+b4fc2000-b4fca000 r--s 00000000 08:07 786519     /var/cache/fontconfig/d52a8644073d54c13679302ca1180695-le32d4.cache-3
+b4fca000-b4fcc000 r--s 00000000 08:07 786524     /var/cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le32d4.cache-3
+b4fcc000-b4fcf000 r--s 00000000 08:07 789093     /var/cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le32d4.cache-3
+b4fcf000-b4fd2000 ---p 00000000 00:00 0 
+b4fd2000-b5020000 rw-p 00000000 00:00 0 
+b5020000-b5027000 r--s 00094000 08:07 591338     /usr/share/java/beansbinding-1.2.1.jar
+b5027000-b502d000 r--s 00044000 08:07 542233     /usr/share/java/arc.jar
+b502d000-b5036000 r--s 00065000 08:07 577432     /usr/share/java/gnome-java-bridge.jar
+b5036000-b5037000 ---p 00000000 00:00 0 
+b5037000-b50b7000 rw-p 00000000 00:00 0 
+b50b7000-b50ba000 ---p 00000000 00:00 0 
+b50ba000-b5108000 rw-p 00000000 00:00 0 
+b5108000-b510b000 ---p 00000000 00:00 0 
+b510b000-b5189000 rw-p 00000000 00:00 0 
+b5189000-b518c000 ---p 00000000 00:00 0 
+b518c000-b51da000 rw-p 00000000 00:00 0 
+b51da000-b51e1000 r--s 00000000 08:07 394462     /usr/lib/gconv/gconv-modules.cache
+b51e1000-b5220000 r--p 00000000 08:07 402784     /usr/lib/locale/ru_UA.utf8/LC_CTYPE
+b5220000-b5223000 ---p 00000000 00:00 0 
+b5223000-b5271000 rw-p 00000000 00:00 0 
+b5271000-b5274000 ---p 00000000 00:00 0 
+b5274000-b52c2000 rw-p 00000000 00:00 0 
+b52c2000-b52c3000 ---p 00000000 00:00 0 
+b52c3000-b5343000 rw-p 00000000 00:00 0 
+b5343000-b5345000 r--s 0001d000 08:07 394709     /usr/lib/jvm/java-6-openjdk/jre/lib/plugin.jar
+b5345000-b534a000 r--s 00045000 08:07 394713     /usr/lib/jvm/java-6-openjdk/jre/lib/netx.jar
+b534a000-b534d000 r--s 00014000 08:07 457813     /usr/lib/jvm/java-6-openjdk/jre/lib/sunrsasign.jar
+b534d000-b5380000 rw-p 00000000 00:00 0 
+b5380000-b550f000 r--s 038c4000 08:07 394894     /usr/lib/jvm/java-6-openjdk/jre/lib/rt.jar
+b550f000-b551d000 rw-p 00000000 00:00 0 
+b551d000-b5537000 rw-p 00000000 00:00 0 
+b5537000-b553d000 rw-p 00000000 00:00 0 
+b553d000-b55de000 rw-p 00000000 00:00 0 
+b55de000-b55e1000 rw-p 00000000 00:00 0 
+b55e1000-b5631000 rw-p 00000000 00:00 0 
+b5631000-b5637000 rw-p 00000000 00:00 0 
+b5637000-b56d7000 rw-p 00000000 00:00 0 
+b56d7000-b56dd000 rw-p 00000000 00:00 0 
+b56dd000-b56f7000 rw-p 00000000 00:00 0 
+b56f7000-b5707000 rw-p 00000000 00:00 0 
+b5707000-b5783000 rw-p 00000000 00:00 0 
+b5783000-b5873000 rwxp 00000000 00:00 0 
+b5873000-b7783000 rw-p 00000000 00:00 0 
+b7783000-b7786000 ---p 00000000 00:00 0 
+b7786000-b77d7000 rw-p 00000000 00:00 0 
+b77d7000-b77d8000 r--p 00000000 00:00 0 
+b77d8000-b77d9000 r--s 00000000 08:07 454225     /usr/share/netbeans/java3/modules/ext/AbsoluteLayout.jar
+b77d9000-b77dc000 r--s 0000f000 08:07 394733     /usr/lib/jvm/java-6-openjdk/jre/lib/ext/pulse-java.jar
+b77dc000-b77e2000 rw-p 00000000 00:00 0 
+b77e2000-b77ea000 rw-s 00000000 08:07 664378     /tmp/hsperfdata_alex/11308
+b77ea000-b77eb000 rw-p 00000000 00:00 0 
+b77eb000-b77ec000 r--p 00000000 00:00 0 
+b77ec000-b77ee000 rw-p 00000000 00:00 0 
+bf839000-bf84e000 rw-p 00000000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: NewJFrame
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+USERNAME=alex
+LD_LIBRARY_PATH=/usr/lib/jvm/java-6-openjdk/jre/lib/i386/client:/usr/lib/jvm/java-6-openjdk/jre/lib/i386:/usr/lib/jvm/java-6-openjdk/jre/../lib/i386
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x3ea370], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x3ea370], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x30d390], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: SIG_IGN, sa_mask[0]=0x00001000, sa_flags=0x10000000
+SIGXFSZ: [libjvm.so+0x30d390], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x30d390], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x30ca40], sa_mask[0]=0x00000004, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x30f5b0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: SIG_IGN, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGTERM: [libjvm.so+0x30f5b0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x30f5b0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Ubuntu 10.04 (lucid)
+uname:Linux 2.6.32-35-generic #78-Ubuntu SMP Tue Oct 11 15:27:15 UTC 2011 i686
+libc:glibc 2.11.1 NPTL 2.11.1 
+rlimit: STACK 8192k, CORE 0k, NPROC infinity, NOFILE 1024, AS infinity
+load average:1.53 1.64 1.72
+
+/proc/meminfo:
+MemTotal:        1018204 kB
+MemFree:           30264 kB
+Buffers:           12724 kB
+Cached:           307100 kB
+SwapCached:        34620 kB
+Active:           466824 kB
+Inactive:         458420 kB
+Active(anon):     356940 kB
+Inactive(anon):   379956 kB
+Active(file):     109884 kB
+Inactive(file):    78464 kB
+Unevictable:          36 kB
+Mlocked:              36 kB
+HighTotal:        130888 kB
+HighFree:            240 kB
+LowTotal:         887316 kB
+LowFree:           30024 kB
+SwapTotal:        816120 kB
+SwapFree:         378956 kB
+Dirty:               332 kB
+Writeback:             0 kB
+AnonPages:        581352 kB
+Mapped:           101508 kB
+Shmem:            131476 kB
+Slab:              24064 kB
+SReclaimable:       9452 kB
+SUnreclaim:        14612 kB
+KernelStack:        3592 kB
+PageTables:        11040 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     1325220 kB
+Committed_AS:    3740544 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       27092 kB
+VmallocChunk:      89668 kB
+HardwareCorrupted:     0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       4096 kB
+DirectMap4k:       20472 kB
+DirectMap4M:      888832 kB
+
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 14 stepping 12, cmov, cx8, fxsr, mmx, sse, sse2, sse3
+
+Memory: 4k page, physical 1018204k(30264k free), swap 816120k(378956k free)
+
+vm_info: OpenJDK Client VM (19.0-b09) for linux-x86 JRE (1.6.0_20-b20), built on Nov  8 2011 17:28:56 by "buildd" with gcc 4.4.3
+
+time: Tue Nov 29 19:32:44 2011
+elapsed time: 14 seconds
+
